@@ -31,7 +31,7 @@ module.exports = {
     sendFeed: function (param, rres) {
         var sql = 'INSERT INTO sicurezza_informatica.feeds' + `(nome,cognome,email,Id_subject,messaggio) VALUES ('` + param.nome + `','` + param.cognome + `','` + param.email + `','` + param.Id_subject + `','` + param.messaggio + `')`;
         con.query(sql, function (err, res, fields) {
-            if (err) rres.(err);
+            if (err) rres.send(err);
             else rres.redirect('/summary');
         });
     }
