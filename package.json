@@ -1,0 +1,44 @@
+{
+  "name": "SI_makeit",
+  "version": "1.0.0",
+  "description": "Questo progetto è il portale di feedback per le lezioni di sicurezza informatica tenute al MakeIt di Modena, sviluppato in nodejs",
+  "main": "app.js",
+  "scripts": {
+    "test": "snyk test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicholaslopiccolo/SI_makeit.git"
+  },
+  "keywords": [
+    "javascript",
+    "SI",
+    "sicurezza",
+    "informatica",
+    "nodejs",
+    "nicholas",
+    "lo",
+    "piccolo"
+  ],
+  "author": "nicholaslopiccolo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicholaslopiccolo/SI_makeit/issues"
+  },
+  "homepage": "https://github.com/nicholaslopiccolo/SI_makeit#readme",
+  "dependencies": {
+    "async": "^2.6.2",
+    "cookie-parser": "^1.4.4",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "helmet": "^3.16.0",
+    "http-errors": "^1.7.2",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.9.1",
+    "morgana": "^2.0.0",
+    "mysql": "^2.16.0"
+  },
+  "devDependencies": {
+    "snyk": "^1.139.0"
+  }
+}

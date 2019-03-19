@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="/style/bulma.min.css">
+  <script src="/javascript/vue.js"></script>
+  <script src="/javascript/jquery.min.js"></script>
+</head>
+
+<body>
+  <section class="hero is-warning is-mobile is-small">
+    <div class="hero-body">
+      <div class="container has-text-right has-text-left-mobile">
+        <h1 class="title">
+          Sicurezza Informatica al MakeIT
+        </h1>
+        <h2 class="subtitle">
+          Lasciaci il tuo feedback
+        </h2>
+      </div>
+    </div>
+    <div class="hero-foot">
+
+      <nav class="navbar">
+        <div class="container">
+          <div class="navbar-brand">
+            <span class="navbar-burger burger" onclick="$('.burger').toggleClass('is-active');$('.navbar-menu').toggleClass('is-active')">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </div>
+          <div class="navbar-menu">
+            <div class="navbar-end">
+              <a id="home" class="navbar-item is-active" href="/">
+                Home
+              </a>
+              <a id="projects" class="navbar-item" href="/summary">
+                Summary
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </section>
+
+  <div id="vue">
+    <form class="form" method="POST" action="/" style="padding:2rem">
+      <div class="field">
+        <label class="label">Nome</label>
+        <div class="control">
+          <input class="input" name="nome" type="text" min="0" max="15" placeholder="Text input" required>
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Cognome</label>
+        <div class="control">
+          <input class="input" name="cognome" type="text" min="0" max="15" placeholder="Text input" required>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Email</label>
+        <div class="control">
+          <input class="input" name="email" type="email" min="0" max="100" placeholder="Email input" required>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Materia preferita</label>
+        <div class="control">
+          <div class="select">
+            <select name="Id_subject" value="-" required>
+              <option value="">-</option>
+              <option v-for="(subject,i) in subjects" :value="subject.Id">{{subject.subject}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Message</label>
+        <div class="control">
+          <textarea class="textarea" name="messaggio" min="0" max="255" placeholder="Textarea"></textarea>
+        </div>
+      </div>
+
+      <div class="field is-grouped">
+        <div class="control">
+          <button class="button is-link">Submit</button>
+        </div>
+        <div class="control">
+          <button class="button is-text">Cancel</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+<script src="/javascript/vue-components.js"></script>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="/style/bulma.min.css">
+    <script src="/javascript/vue.js"></script>
+    <script src="/javascript/jquery.min.js"></script>
+    <script src="/javascript/jquery_cookie.min.js"></script>
+</head>
+
+<body>
+    <section class="hero is-warning is-mobile is-small">
+        <div class="hero-body">
+            <div class="container has-text-right has-text-left-mobile">
+                <h1 class="title">
+                    Sicurezza Informatica al MakeIT
+                </h1>
+                <h2 class="subtitle">
+                    Lasciaci il tuo feedback
+                </h2>
+            </div>
+        </div>
+        <div class="hero-foot">
+
+            <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-brand">
+                        <span class="navbar-burger burger" onclick="$('.burger').toggleClass('is-active');$('.navbar-menu').toggleClass('is-active')">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </div>
+                    <div class="navbar-menu">
+                        <div class="navbar-end">
+                            <a id="home" class="navbar-item" href="/">
+                                Home
+                            </a>
+                            <a id="projects" class="navbar-item is-active" href="/summary">
+                                Summary
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </section>
+
+    <div class="content" id="vue" style="padding: 2rem">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th><abbr title="Position">Nro</abbr></th>
+                    <th>Nome</th>
+                    <th>Cognome</th>
+                    <th>Materia</th>
+                    <th>Messaggio</th>
+                    <th>Data Creazione</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(feed,i) in feeds" :key="feed.id">
+                    <th>{{ i+1 }}</th>
+                    <td>{{ feed.nome }}</td>
+                    <td>{{ feed.cognome }}</td>
+                    <td>{{ feed.subject }}</td>
+                    <td>{{ feed.messaggio }}</td>
+                    <td>{{ feed.creation_date }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+<script src="/javascript/vue-components.js"></script>
+
+</html>
