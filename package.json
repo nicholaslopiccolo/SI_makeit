@@ -31,6 +31,7 @@
     "cookie-parser": "^1.4.4",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
+    "express-session": "^1.15.6",
     "helmet": "^3.16.0",
     "http-errors": "^1.7.2",
     "jsonwebtoken": "^8.5.1",
