@@ -5,7 +5,7 @@ var fs = require('fs');
 
 var con = mysql.createConnection({
     host: 'localhost',
-    user: 'root',
+    user: 'pippo',
     password: 'password',
     insecureAuth: true,
     database: 'sicurezza_informatica'
