@@ -37,14 +37,7 @@ router.get('/logout', function (req, res, next) {
   res.redirect('/summary');
 });
 
-router.post('/login', function (req, res, next) {
-  if (req.body.username == 'root' && req.body.password == 'makeItSI.19') { //sistema molto poco statico...
-    req.session.admin = true;
-    res.redirect('/summary');
-  } else return res.status(400).send({
-    message: 'Login error!'
-  });
-});
+router.post('/login', db.adminLogin);
 
 router.post('/delete', function (req, res, next) {
   if (req.session.admin) {
