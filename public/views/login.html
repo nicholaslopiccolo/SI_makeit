@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="/style/bulma.min.css">
+    <script src="/javascript/vue.js"></script>
+</head>
+
+<body>
+    <section class="hero is-warning is-mobile is-small">
+        <div class="hero-body">
+          <div class="container has-text-right has-text-left-mobile">
+            <h1 class="title">
+              Sicurezza Informatica al MakeIT
+            </h1>
+            <h2 class="subtitle">
+              Spazio riservato all'admin di sistema
+            </h2>
+          </div>
+        </div>
+        <div class="hero-foot">
+    
+          <nav class="navbar">
+            <div class="container">
+              <div class="navbar-brand">
+                <span class="navbar-burger burger" onclick="$('.burger').toggleClass('is-active');$('.navbar-menu').toggleClass('is-active')">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </div>
+              <div class="navbar-menu">
+                <div class="navbar-end">
+                  <a id="home" class="navbar-item" href="/">
+                    Home
+                  </a>
+                  <a id="projects" class="navbar-item" href="/summary">
+                    Summary
+                  </a>
+                  <a id="projects" class="navbar-item is-active" href="/login">
+                    Login
+                  </a>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </section>
+
+    <section class="hero is-fullheight is-danger is-medium">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns is-centered">
+                    <article class="card is-rounded">
+                        <form class="card-content" action="/login" method="POST">
+                            <h1 class="title">
+                                <img src="icon.png" alt="logo" width="200">
+                            </h1>
+                            <p class="control" style="padding:0.6rem">
+                                <input class="input" type="text" placeholder="username" name="username">
+                            </p>
+                            <p class="control" style="padding:0.6rem">
+                                <input class="input" type="password" placeholder="Password" name="password">
+                            </p>
+                            <p class="control" style="padding:0.6rem">
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    Remember me
+                                </label>
+                            </p>
+                            <p class="control">
+                                <button class="button is-dark is-medium is-fullwidth">
+                                    <i class="fa fa-user"></i>
+                                    Login
+                                </button>
+                            </p>
+                        </form>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

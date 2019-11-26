@@ -1,6 +1,5 @@
 var mysql = require('mysql');
-var async = require('async');
-var fs = require('fs');
+var SqlString = require('sqlstring');
 //async è una libreria particolare che permette di lavorare senza la necessita dell'uso delle callabck
 
 var con = mysql.createConnection({
@@ -23,14 +22,23 @@ var startCon = function () {
         }
     });
 };
-
 module.exports = {
     query: function (query, callback) {
         con.query(query, callback)
     },
-    sendFeed: function (param, rres) {
-        var sql = 'INSERT INTO sicurezza_informatica.feeds' + `(nome,cognome,email,Id_subject,messaggio) VALUES ('` + param.nome + `','` + param.cognome + `','` + param.email + `','` + param.Id_subject + `','` + param.messaggio + `')`;
-        con.query(sql, function (err, res, fields) {
+    getFeeds(req, res) {
+        var sql = `Select nome, cognome,messaggio,s.subject,f.creation_date,f.Id from feeds f, subjects s WHERE s.Id = f.Id_subject`;
+        con.query(sql, function (err, body, fields) {
+            if (err) throw err;
+            else {
+                console.log(body);
+                res.send(body);
+            }
+        });
+    },
+    sendFeed: function (p, rres) {
+        var sql = `INSERT INTO sicurezza_informatica.feeds (nome,cognome,email,Id_subject,messaggio) VALUES (?,?,?,?,?)`;
+        con.query(sql, [p.nome, p.cognome, p.email, p.Id_subject, p.messaggio], function (err, res, fields) {
             if (err) rres.send(err);
             else rres.redirect('/summary');
         });

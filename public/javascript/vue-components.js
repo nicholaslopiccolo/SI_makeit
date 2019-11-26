@@ -1,6 +1,7 @@
 var vue = new Vue({
   el: '#vue',
   data: {
+    date_options:{ day: '2-digit', month: '2-digit', year: '2-digit' },
     feeds: [],
     subjects:[],
   },
@@ -17,17 +18,11 @@ var vue = new Vue({
       //start spinner
       //get rooms from client db --- to change
       this.feeds.splice(0, this.feeds.length);
-      $.ajax({
-        url: "/feeds",
-        beforeSend: function (xhr) {
-          xhr.overrideMimeType("text/plain; charset=x-user-defined");
-        }
-      }).done(function (data) {
-        JSON.parse(data).forEach((el,i)=>{
-          el.creation_date = new Date(el.creation_date).toDateString();
+      axios.get('/feeds').then(res => {
+        res.data.forEach((el, i) => {
           self.feeds.push(el);
         });
-      });
+      })
     },
     getSubjects: function () {
       var self = this;
