@@ -46,6 +46,6 @@
     "sqlstring": "^2.3.1"
   },
   "devDependencies": {
-    "snyk": "^1.139.0"
+    "snyk": "^1.1012.0"
   }
 }
